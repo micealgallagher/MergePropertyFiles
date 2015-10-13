@@ -13,7 +13,7 @@ declare -A ALL_PROPERTIES
 
 # All the master file property names and values will be preserved
 for MASTER_FILE_LINE in "${MASTER_FILE[@]}"; do
-    IFS='=' read -ra MASTER_PROPERTY_AND_VALUE <<< "$MASTER_FILE_LINE"
+    IFS='=' read -r MASTER_PROPERTY_AND_VALUE <<< "$MASTER_FILE_LINE"
 
     MASTER_PROPERTY_NAME="${MASTER_PROPERTY_AND_VALUE[0]}"
     MASTER_PROPERTY_VALUE="${MASTER_PROPERTY_AND_VALUE[1]}"
@@ -23,7 +23,7 @@ done
 
 # Properties that are in the slave but not the master will be preserved
 for SLAVE_FILE_LINE in "${SLAVE_FILE[@]}"; do
-    IFS='=' read -ra SLAVE_PROPERTY_AND_VALUE <<< "$SLAVE_FILE_LINE"
+    IFS='=' read -r SLAVE_PROPERTY_AND_VALUE <<< "$SLAVE_FILE_LINE"
 
     SLAVE_PROPERTY_NAME="${SLAVE_PROPERTY_AND_VALUE[0]}"
     SLAVE_PROPERTY_VALUE="${SLAVE_PROPERTY_AND_VALUE[1]}"
